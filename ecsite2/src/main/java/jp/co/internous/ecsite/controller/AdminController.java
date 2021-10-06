@@ -16,6 +16,7 @@ import jp.co.internous.ecsite.model.entity.Goods;
 import jp.co.internous.ecsite.model.entity.User;
 import jp.co.internous.ecsite.model.form.GoodsForm;
 import jp.co.internous.ecsite.model.form.LoginForm;
+import jp.co.internous.ecsite.model.form.UserForm;
 
 @Controller
 @RequestMapping("/ecsite/admin")
@@ -54,7 +55,7 @@ public class AdminController {
 		m.addAttribute("userName",form.getUserName());
 		m.addAttribute("password",form.getPassword());
 		
-		return"goodsmst";
+		return "goodsmst";
 	}
 	
 	@RequestMapping("/addGoods")
@@ -68,6 +69,28 @@ public class AdminController {
 		goodsRepos.saveAndFlush(goods);
 		
 		return"forward:/ecsite/admin/welcome";
+	}
+	
+	@RequestMapping("/userMst")
+	public String userMst(LoginForm form,Model m) {
+		m.addAttribute("userName",form.getUserName());
+		m.addAttribute("password",form.getPassword());
+		
+		return "usermst";
+	}
+	
+	@RequestMapping("/addUser")
+	public String addUser(UserForm userForm,LoginForm loginForm,Model m) {
+		m.addAttribute("userName",loginForm.getUserName());
+		m.addAttribute("password",loginForm.getPassword());
+		
+		User user = new User();
+		user.setUserName(userForm.getUserName());
+		user.setPassword(userForm.getPassword());
+		user.setFullName(userForm.getFullName());
+		userRepos.saveAndFlush(user);
+		
+		return "forward:/ecsite/admin/";
 	}
 	
 	@ResponseBody

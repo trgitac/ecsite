@@ -41,6 +41,14 @@ input[name=password] {
 	width: 100px;
 }
 
+input[name=fullName] {
+	width: 100px;
+}
+
+button {
+	margin-bottom: 10px;
+}
+
 table {
 	margin: 20px;
 	border-collapse: collapse;
