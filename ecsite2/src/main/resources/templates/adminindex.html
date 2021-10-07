@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8"/>
-<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
-<title>ECサイト</title>
+	<meta charset="UTF-8"/>
+	<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+	<title>ECサイト</title>
 </head>
 <body>
 
@@ -12,16 +12,15 @@
 </header>
 
 <div id="adminPage">
-<h2>管理者ログイン</h2>
-<form name="loginForm" method="post" action="/ecsite/admin/welcome" th:action="@{/ecsite/admin/welcome}">
-	<p>User name:<input type="text" name="userName"/></p>
-	<p>Password :<input type="password" name="password"/></p>
-	<button type="submit">login</button>
-</form>
-</form>
-<form name="userForm"  method="post" action="/ecsite/admin/userMst" th:action="@{/ecsite/admin/userMst}">
-	<button type="submit">新規登録</button>
-</form>
+	<h2>管理者ログイン</h2>
+	<form name="loginForm" method="post" action="/ecsite/admin/welcome" th:action="@{/ecsite/admin/welcome}">
+		<p>User name:<input type="text" name="userName"/></p>
+		<p>Password :<input type="password" name="password"/></p>
+		<button type="submit">login</button>
+	</form>
+	<form name="userForm"  method="post" action="/ecsite/admin/user" th:action="@{/ecsite/admin/user}">
+		<button type="submit">新規登録</button>
+	</form>
 </div>
 
 </body>

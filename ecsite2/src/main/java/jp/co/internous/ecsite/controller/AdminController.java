@@ -71,18 +71,14 @@ public class AdminController {
 		return"forward:/ecsite/admin/welcome";
 	}
 	
-	@RequestMapping("/userMst")
-	public String userMst(LoginForm form,Model m) {
-		m.addAttribute("userName",form.getUserName());
-		m.addAttribute("password",form.getPassword());
+	@RequestMapping("/user")
+	public String user() {
 		
-		return "usermst";
+		return "user";
 	}
 	
-	@RequestMapping("/addUser")
-	public String addUser(UserForm userForm,LoginForm loginForm,Model m) {
-		m.addAttribute("userName",loginForm.getUserName());
-		m.addAttribute("password",loginForm.getPassword());
+	@RequestMapping("/add")
+	public String UserRegister(UserForm userForm) {
 		
 		User user = new User();
 		user.setUserName(userForm.getUserName());
