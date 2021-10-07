@@ -77,7 +77,7 @@ public class AdminController {
 		return "user";
 	}
 	
-	@RequestMapping("/add")
+	@RequestMapping("/addUser")
 	public String UserRegister(UserForm userForm) {
 		
 		User user = new User();
