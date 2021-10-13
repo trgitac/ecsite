@@ -16,7 +16,7 @@ let login = (event) => {
 		scriptCharset: 'utf-8'
 	})
 	.then((result) => {
-		let user = JSON.parse(result); //?
+		let user = JSON.parse(result); 
 		$('#welcome').text(` -- ようこそ！ ${user.fullName} さん`);
 		$('#hiddenUserId').val(user.id);
 		$('input[name=userName]').val('');
@@ -138,7 +138,12 @@ let check = (event) => {
 		scriptCharset: 'utf-8'
 	})
 	.then((result) => {
-		
+		if (count === 0) {
+			$('.checkBtn').prop("disabled",false);
+			
+		} else {
+			alert('ユーザー名が重複しています')
+		}
 		},() => {
 			console.error('Error: ajax connection failed.');
 		}

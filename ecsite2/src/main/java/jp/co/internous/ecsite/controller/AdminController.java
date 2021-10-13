@@ -72,6 +72,9 @@ public class AdminController {
 		return"forward:/ecsite/admin/welcome";
 	}
 	
+	
+	
+	
 	@ResponseBody
 	@PostMapping("/api/deleteGoods")
 	public String deleteApi(@RequestBody GoodsForm f, Model m) {
