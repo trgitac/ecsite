@@ -58,9 +58,10 @@ $(() => {
 			</tr>
 		</tbody>
 	</table>
-	<form name="goodsForm" id="adminPage" method="post" action="/ecsite/admin/goodsMst" th:action="@{/ecsite/admin/goodsMst}">
+		<form name="goodsForm" id="adminPage" method="post" action="/ecsite/admin/goodsMst" th:action="@{/ecsite/admin/goodsMst}">
 		<button type="submit" th:if="${userName != null}">新規追加</button>
 		<input type="hidden" name="userName" th:value="${userName}"/>
 		<input type="hidden" name="password" th:value="${password}"/>
+	</form>
 </body>
 </html>

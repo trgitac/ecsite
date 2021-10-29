@@ -57,7 +57,7 @@ public class IndexController {
 		if (users.size() > 0) {
 			dto = new LoginDto(users.get(0));
 		}
-		return gson.toJson(dto);
+	return gson.toJson(dto);
 	}
 	
 	@ResponseBody

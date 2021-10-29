@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 import jp.co.internous.ecsite.model.dao.GoodsRepository;
 import jp.co.internous.ecsite.model.dao.UserRepository;
 import jp.co.internous.ecsite.model.entity.Goods;
@@ -27,7 +26,6 @@ public class AdminController {
 	
 	@Autowired
 	private GoodsRepository goodsRepos;
-	
 
 	@RequestMapping("/")
 	public String index() {
@@ -56,7 +54,7 @@ public class AdminController {
 		m.addAttribute("userName",form.getUserName());
 		m.addAttribute("password",form.getPassword());
 		
-		return "goodsmst";
+		return"goodsmst";
 	}
 	
 	@RequestMapping("/addGoods")
@@ -71,9 +69,6 @@ public class AdminController {
 		
 		return"forward:/ecsite/admin/welcome";
 	}
-	
-	
-	
 	
 	@ResponseBody
 	@PostMapping("/api/deleteGoods")
